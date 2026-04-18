@@ -1,0 +1,23 @@
+.dupla {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.dupla div {
+    text-align: center;
+}
+
+.dupla img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 600px) {
+    .dupla {
+        flex-direction: column;
+        align-items: center;
+    }
+}
