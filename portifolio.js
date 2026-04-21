@@ -1,14 +1,14 @@
-/*Menu de navegação responsivo para dispositivos móveis: um botão (ex: ícone hambúrguer)
-que abre e fecha o menu ao ser clicado.                FEITO >:DDDDDDDDDDD             */
 const botaoMenu = document.getElementById('botaoMenu');
 const menuNav = document.getElementById('menuNav');
+const botaoMensagem= document.getElementById('botaoMensagem');
+const mensagem = document.getElementById('mensagem');
+const contador = document.getElementById('contador');
+
 function abrirEFechar() {
     menuNav.classList.toggle('ativo');
 }
 botaoMenu.addEventListener('click',abrirEFechar);
-/*Validação do formulário de contato: ao clicar em “Enviar”, verificar se os campos estão
-preenchidos e exibir uma mensagem de erro caso estejam vazios.              FEITO VAMOS >:DDDDDDDDDDDDDDDDDDD          */
-const botaoMensagem= document.getElementById('botaoMensagem');
+
 function enviar(event){
     event.preventDefault();
 
@@ -38,7 +38,10 @@ function enviar(event){
         alert("Ops, esqueceu de escrever no(s) campo(s) de " + mensagemDeErro.join(", "));
     }
 }
+function contar(){
+    let quantidade = mensagem.value.length;
+    contador.textContent = quantidade + " caracteres";
+}
+
 botaoMensagem.addEventListener('click',enviar);
-/*Uma interação adicional à escolha da dupla. Exemplos: alternância entre tema claro e
-escuro (dark mode), carrossel de imagens, contador de caracteres no campo de mensagem,
-animação de entrada de elementos ao rolar a página, etc.*/
+mensagem.addEventListener('input',contar);
